@@ -5,5 +5,7 @@ import (
 )
 
 func Router(e *echo.Echo) {
+	e.Static("/css", "web/css")
+
 	e.File("/", "web/html/index.html")
 }
