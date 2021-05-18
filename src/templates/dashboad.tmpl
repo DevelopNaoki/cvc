@@ -19,37 +19,37 @@
         <div class="position-sticky pt-md-5">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/dashboad">
-                <span class="ml-2">Dashboard</span>
+              <a class="nav-link {{if eq .sidebar "dashboad"}}active{{end}}" aria-current="page" href="/dashboad">
+                <span class="ml-2">Dashboad</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/host">
+	    <li class="nav-item">
+              <a class="nav-link {{if eq .sidebar "host"}}active{{end}}" href="/host">
                 <span class="ml-2">Host</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/volume">
-                <span class="ml-2">Volume</span>
+              <a class="nav-link {{if eq .sidebar "volumes"}}active{{end}}" href="/volumes">
+                <span class="ml-2">Volumes</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/network">
-                <span class="ml-2">Network</span>
+              <a class="nav-link {{if eq .sidebar "networks"}}active{{end}}" href="/networks">
+                <span class="ml-2">Networks</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="virtualmachine">
-                <span class="ml-2">Virtual Machine</span>
+              <a class="nav-link {{if eq .sidebar "virtualmachines"}}active{{end}}" href="virtualmachines">
+                <span class="ml-2">Virtual Machines</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/container">
-                <span class="ml-2">Container</span>
+              <a class="nav-link {{if eq .sidebar "containers"}}active{{end}}" href="/containers">
+                <span class="ml-2">Containers</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/setting">
+              <a class="nav-link {{if eq .sidebar "setting"}}active{{end}}" href="/setting">
                 <span class="ml-2">Setting</span>
               </a>
             </li>
@@ -59,11 +59,11 @@
       <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Virtual Machine</a></li>
+            <li class="breadcrumb-item"><a href="#">{{.title}}</a></li>
             <li class="breadcrumb-item active" aria-current="page">Overview</li>
           </ol>
         </nav>
-        <h1 class="h2">Virtual Machine</h1>
+        <h1 class="h2">{{.title}}</h1>
           <p>This is the homepage of a simple admin interface which is part of a tutorial written on Themesberg</p>
       </main>
     </div>

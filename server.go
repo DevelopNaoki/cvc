@@ -1,21 +1,17 @@
 package main
 
 import (
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
+	"github.com/gin-gonic/gin"
 
-	"./router"
+	"./routes"
 )
 
 func main() {
-	e := echo.New()
 
-	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
-		Format: "${time_rfc3339_nano}: ${remote_ip}: \"${method} ${uri} ${status}\"\n",
-	}))
-	e.Use(middleware.Recover())
+	engine:= gin.Default()
+	engine.LoadHTMLGlob("src/templates/*.tmpl")
 
-	router.Router(e)
+	routes.Router(engine)
 
-	e.Start(":8080")
+	engine.Run(":3000")
 }
