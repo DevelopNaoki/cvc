@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>CVC</title>
   <!-- insert style sheet -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/sidebar.css">
@@ -11,7 +11,16 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 <body>
-  <h1>Dashboad</h1>
+<nav class="navbar navbar-light bg-light p-1">
+  <div class="d-flex col-12 col-md-3 col-lg-2 mb-1 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
+      <a class="navbar-brand" href="/overview">
+          CVC (Control Virtualmachines and Containers)
+      </a>
+      <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  </div>
+</nav>
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -19,43 +28,54 @@
         <div class="position-sticky pt-md-5">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link {{if eq .sidebar "dashboad"}}active{{end}}" aria-current="page" href="/dashboad">
+              <a class="nav-link {{if eq .title "Overview"}}active{{end}}" aria-current="page" href="/overview">
+                <span class="ml-2">Overview</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{if eq .title "Dashboad"}}active{{end}}" aria-current="page" href="/dashboad">
                 <span class="ml-2">Dashboad</span>
               </a>
             </li>
 	    <li class="nav-item">
-              <a class="nav-link {{if eq .sidebar "host"}}active{{end}}" href="/host">
+              <a class="nav-link {{if eq .title "Host"}}active{{end}}" href="/host">
                 <span class="ml-2">Host</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{if eq .sidebar "volumes"}}active{{end}}" href="/volumes">
+              <a class="nav-link {{if eq .title "Volumes"}}active{{end}}" href="/volumes">
                 <span class="ml-2">Volumes</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{if eq .sidebar "networks"}}active{{end}}" href="/networks">
+              <a class="nav-link {{if eq .title "Networks"}}active{{end}}" href="/networks">
                 <span class="ml-2">Networks</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{if eq .sidebar "virtualmachines"}}active{{end}}" href="virtualmachines">
+              <a class="nav-link {{if eq .title "Virtual Machines"}}active{{end}}" href="virtualmachines">
                 <span class="ml-2">Virtual Machines</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{if eq .sidebar "containers"}}active{{end}}" href="/containers">
+              <a class="nav-link {{if eq .title "Containers"}}active{{end}}" href="/containers">
                 <span class="ml-2">Containers</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{if eq .sidebar "setting"}}active{{end}}" href="/setting">
+              <a class="nav-link {{if eq .title "Setting"}}active{{end}}" href="/setting">
                 <span class="ml-2">Setting</span>
               </a>
             </li>
           </ul>
         </div>
       </nav>
+      {{if eq .title "Overview"}}
+      <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+        <h1 class="h2">{{.title}}</h1>
+          <p>This is the homepage of a simple admin interface which is part of a tutorial written on Themesberg</p>
+      </main>
+      {{else if eq .title "Dashboad"}}
       <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -66,6 +86,7 @@
         <h1 class="h2">{{.title}}</h1>
           <p>This is the homepage of a simple admin interface which is part of a tutorial written on Themesberg</p>
       </main>
+      {{end}}
     </div>
   </div>
 </body>
