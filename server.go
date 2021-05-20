@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 
-	"./routes"
+	"./router"
 )
 
 func main() {
@@ -11,7 +11,7 @@ func main() {
 	engine:= gin.Default()
 	engine.LoadHTMLGlob("src/templates/*.tmpl")
 
-	routes.Router(engine)
+	router.Router(engine)
 
 	engine.Run(":3000")
 }
