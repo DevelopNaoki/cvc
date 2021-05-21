@@ -18,7 +18,6 @@ func TTY(h string, u string, p string) (status int) {
 	cmd := exec.Command("gotty", commandAndArgs...)
 	err := cmd.Start()
 	if err != nil {
-		cmd.Process.Kill()
 		return -1
 	} else {
 		return 0

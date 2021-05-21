@@ -4,8 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 
-	"fmt"
-	"../api"
+	"github.com/DevelopNaoki/cvc/api"
 )
 
 func Router(engine *gin.Engine) {
@@ -35,7 +34,6 @@ func Router(engine *gin.Engine) {
                 p := c.PostForm("Password")
 		status := api.TTY(h, u, p)
 		url := "http://"+h+":8080"
-		fmt.Print(url)
 		if status == 0{
 			c.Redirect(http.StatusSeeOther, url)
 		} else {
