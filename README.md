@@ -28,4 +28,4 @@ and
 ./cvc
 ```
 
-Installation finished and Open http://192.168.0.50:3000 on browser
+Installation finished and Open http://<your ip address>:3000 on browser
