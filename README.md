@@ -1,3 +1,31 @@
 # cvc
 ## Overview
 This is a web UI for controlling containers and VMs
+
+## Premise
+```
+# go version
+go version go1.16.4 linux/amd64
+```
+
+## How to use
+first, clone this repository
+```
+git clone https://github.com/DevelopNaoki/cvc/
+```
+
+secound, get some packages
+```
+go get github.com/yudai/gotty
+```
+
+if ```gotty``` can use, exec this command
+```
+go build
+```
+and 
+```
+./cvc
+```
+
+Installation finished and Open http://192.168.0.50:3000 on browser
