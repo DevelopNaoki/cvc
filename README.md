@@ -1,7 +1,7 @@
 # cvc
 ## Overview
 This is a web UI for controlling containers and VMs
-but, niw this can use web ssh
+but, now this can only use web ssh
 
 ## Premise
 ```
@@ -15,7 +15,7 @@ first, clone this repository
 git clone https://github.com/DevelopNaoki/cvc/
 ```
 
-secound, get some packages
+second, get some packages
 ```
 go get github.com/yudai/gotty
 ```
