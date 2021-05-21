@@ -33,9 +33,8 @@ func Router(engine *gin.Engine) {
                 u := c.PostForm("Username")
                 p := c.PostForm("Password")
 		status := api.TTY(h, u, p)
-		url := "http://"+h+":8080"
 		if status == 0{
-			c.Redirect(http.StatusSeeOther, url)
+			c.Redirect(http.StatusSeeOther, "http://192.168.0.50:8080")
 		} else {
                         c.String(http.StatusOK, "error")
 		}

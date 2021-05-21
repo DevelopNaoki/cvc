@@ -14,6 +14,8 @@ func TTY(h string, u string, p string) (status int) {
 		h,
 		"-l",
 		u,
+		"-o",
+		"StrictHostKeyChecking no",
 	}
 	cmd := exec.Command("gotty", commandAndArgs...)
 	err := cmd.Start()
