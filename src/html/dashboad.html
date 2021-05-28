@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <!-- insert style sheet -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/sidebar.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+<body>
+  <h1>Dashboad</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <!-- sidebar content goes in here -->
+        <div class="position-sticky pt-md-5">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/dashboad">
+                <span class="ml-2">Dashboad</span>
+              </a>
+            </li>
+	    <li class="nav-item">
+              <a class="nav-link" href="/host">
+                <span class="ml-2">Host</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/volume">
+                <span class="ml-2">Volume</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/network">
+                <span class="ml-2">Network</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="virtualmachine">
+                <span class="ml-2">Virtual Machine</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/container">
+                <span class="ml-2">Container</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/setting">
+                <span class="ml-2">Setting</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Dashboad</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Overview</li>
+          </ol>
+        </nav>
+        <h1 class="h2">Dashboard</h1>
+          <p>This is the homepage of a simple admin interface which is part of a tutorial written on Themesberg</p>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
