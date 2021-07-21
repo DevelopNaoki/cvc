@@ -7,8 +7,7 @@ import (
 )
 
 func main() {
-
-	engine:= gin.Default()
+	engine := gin.Default()
 	engine.LoadHTMLGlob("src/templates/*.tmpl")
 
 	router.Router(engine)
