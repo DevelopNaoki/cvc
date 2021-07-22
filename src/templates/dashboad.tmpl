@@ -11,6 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 <body>
+{{ $title := .title }}
 <nav class="navbar navbar-light bg-light p-1">
   <div class="d-flex col-12 col-md-3 col-lg-2 mb-1 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
       <a class="navbar-brand" href="/overview">
@@ -27,64 +28,20 @@
         <!-- sidebar content goes in here -->
         <div class="position-sticky pt-md-5">
           <ul class="nav flex-column">
+            {{range .sidevar}}
             <li class="nav-item">
-              <a class="nav-link {{if eq .title "Overview"}}active{{end}}" aria-current="page" href="/overview">
-                <span class="ml-2">Overview</span>
+              <a class="nav-link {{if eq $title .}}active{{end}}" aria-current="page" href="/{{.}}">
+                <span class="ml-2">{{.}}</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link {{if eq .title "Dashboad"}}active{{end}}" aria-current="page" href="/dashboad">
-                <span class="ml-2">Dashboad</span>
-              </a>
-            </li>
-	    <li class="nav-item">
-              <a class="nav-link {{if eq .title "Host"}}active{{end}}" href="/host">
-                <span class="ml-2">Host</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{if eq .title "Volumes"}}active{{end}}" href="/volumes">
-                <span class="ml-2">Volumes</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{if eq .title "Networks"}}active{{end}}" href="/networks">
-                <span class="ml-2">Networks</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{if eq .title "Virtual Machines"}}active{{end}}" href="virtualmachines">
-                <span class="ml-2">Virtual Machines</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{if eq .title "Containers"}}active{{end}}" href="/containers">
-                <span class="ml-2">Containers</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{if eq .title "Setting"}}active{{end}}" href="/setting">
-                <span class="ml-2">Setting</span>
-              </a>
-            </li>
+            {{end}}
           </ul>
         </div>
       </nav>
-      {{if eq .title "Overview"}}
+      {{if eq $title "overview"}}
       <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
         <h1 class="h2">{{.title}}</h1>
           <p>CVC mean Control Virtualmachines and Containers. With this tool, you can create bridge interfaces, create and edit virtual disks, virtual machines, containers, etc from the web page</p>
-      </main>
-      {{else if eq .title "Dashboad"}}
-      <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">{{.title}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Overview</li>
-          </ol>
-        </nav>
-        <h1 class="h2">{{.title}}</h1>
-          <p>This is the homepage of a simple admin interface which is part of a tutorial written on Themesberg</p>
       </main>
       {{else if eq .title "Host"}}
       <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">

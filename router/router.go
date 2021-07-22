@@ -9,13 +9,13 @@ import (
 )
 
 func Router(engine *gin.Engine) {
-	sidevar := [...]string{
-		"Overview",
-		"Dashboard",
-		"Network",
-		"Virtual Machie",
-		"Container",
-		"Setting",
+	sidevar := []string{
+		"overview",
+		"host",
+		"network",
+		"virtual Machie",
+		"container",
+		"setting",
 	}
 
 	engine.Static("/css", "src/css")
@@ -23,19 +23,15 @@ func Router(engine *gin.Engine) {
 
 	engine.GET("/overview", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "dashboad.tmpl", gin.H{
-			"title":   "Overview",
+			"title":   "overview",
 			"sidevar": sidevar,
-		})
-	})
-	engine.GET("/dashboad", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "dashboad.tmpl", gin.H{
-			"title": "Dashboad",
 		})
 	})
 
 	engine.GET("/host", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "dashboad.tmpl", gin.H{
-			"title": "Host",
+			"title":   "host",
+			"sidevar": sidevar,
 		})
 	})
 
